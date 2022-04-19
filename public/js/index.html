@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GamePicker</title>
+    <link  rel="stylesheet"
+           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+           crossorigin="anonymous">
+
+    <link rel="icon" href="https://toolson.net/ImageData/Icon/600670.ico?r=637760491939491526" type="image/x-icon">
+    <link rel="shortcut icon" href="https://toolson.net/ImageData/Icon/600670.ico?r=637760491939491526" type="image/x-icon">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-default bg-dark">
+    <a class="navbar-brand" style="color: #616cb8" href="#">Game picker</a>
+    <div>
+        <ul class="navbar-nav">
+            <li class="main" >
+            <li><a class="nav-link" style="color: #616cb8" href="#">About site</a></li>
+            <li><a class="nav-link" style="color: #616cb8" href="#">Contact with us</a></li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="private">
+            <div class="form-inline my-2 my-lg-0">
+                <div class="napravo">
+                    <div class="icon">
+                        <div class="image"><a href="#popup0" class="popup-link"><img id="icon" src="image/icon.png" width="50" height="50"/></a></div>
+                    </div>
+
+                    <input id="search" type="text" name="search"  class="search" placeholder="Search here!">
+
+
+                    <button id="search123" class="btn btn-dark">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="mainimg">
+    <hr>
+    <br>
+    <br>
+    <div class="option">
+        <h5 class="title"> <span>Choose game  genre:</span>
+            <select id="games" name="games">
+                <option value="599">Simulator</option>
+                <option value="1774">Shooter</option>
+                <option value="122">RPG</option>
+                <option value="1667">Horror</option>
+            </select>
+            <button onclick="getOption()" class="btn btn-dark btn-l">Yes</button>
+        </h5>
+
+
+        <h5 class="title1"><span>Choose movie genre:</span>
+            <select id="movie" name="movie" >
+                <option value="19">Action</option>
+                <option value="1684">Fantasy</option>
+                <option value="5984">Drama</option>
+                <option value="21">Adventure</option>
+            </select>
+            <button onclick="movie()" class="btn btn-dark btn-m">Yes</button>
+        </h5>
+        <script >
+            function getOption() {
+                selectElement = document.querySelector('#games');
+                output = selectElement.value;
+                document.querySelector('.output').textContent = output;
+
+            }
+            function movie(){
+                selectElement = document.querySelector('#movie');
+                movie = selectElement.value;
+                document.querySelector('.movie').textContent = movie;
+            }
+
+            function myFunction() {
+                window.open("https://store.steampowered.com/search/?tags="+output+"%2C"+movie, "_top");
+            }
+
+            function showgame(){
+
+                if (output==599&&movie==19) {
+                    window.open("exp","_top")
+                }
+                else if (output==599&&movie==1684) {
+                    window.open("exp","_top")
+                }
+                else if (output==599&&movie==5984) {
+                    window.open("exp","_top")
+                }
+                else if (output==599&&movie==21) {
+                    window.open("exp","_top")
+                }
+                else if (output==1774&&movie==19) {
+                    window.open("exp","_top")
+                }
+                else if (output===1774&&movie==1684) {
+                    window.open("exp","_top")
+                }
+                else if (output==1774&&movie==5984) {
+                    window.open("exp","_top")
+                }
+                else if (output==1774&&movie==21) {
+                    window.open("exp","_top")
+                }
+                else if (output==122&&movie==1684) {
+                    window.open("exp","_top")
+                }
+                else if (output==122&&movie==5984) {
+                    window.open("exp","_top")
+                }
+                else if (output==122&&movie==21) {
+                    window.open("exp","_top")
+                }
+                else if (output==122&&movie==19) {
+                    window.open("exp","_top")
+                }
+                else if (output==1667&&movie==1684) {
+                    window.open("exp","_top")
+                }
+                else if (output==1667&&movie==5984) {
+                    window.open("exp","_top")
+                }
+                else if (output==1667&&movie==21) {
+                    window.open("exp","_top")
+                }
+                else if (output==1667&&movie==19) {
+                    window.open("exp","_top")
+                }
+            }
+            function image(){
+                $(document).ready( function() {
+                    var url=$("#imagesss").val();
+                    console.log(url);
+                    var audioUrl = '"'+ url+  '"';
+                    console.log(audioUrl);
+                    $('#icon').attr('src', url);
+                })
+            }
+
+            function close_window(){
+                window.close();
+            }
+            $("#search123").click(function(){
+
+                const string= $( "#search").val();
+                const stringwithout=string.split(' ').join('+');
+                window.open("https://store.steampowered.com/search/?term="+stringwithout,"_top");
+            });
+        </script>
+        <script src="open.js"></script>
+        <button class="btn btn-dark" onclick="myFunction()">Show the result on Steam</button>
+        <button onclick="showgame()" class="btn btn-dark">Show the result on this website</button>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="popup0" class="popup">
+    <div class="popup_body">
+        <div class="popup_content">
+            <a href="#header" class="popup_close close-popup">X</a>
+            <br>
+            <div class="popup_title">Your account</div>
+            <div class="popup_text">
+
+                <a href="#popup72" class="popup-link">Change a photo</a>
+
+                <h5>Edit a photo</h5>
+                <div class="title3"><a onclick="window.close(); return false;" name="acc" class="btn btn-dark btn-m">Sign Out of Your Account</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup72" class="popup">
+    <div class="popup_body">
+        <div class="popup_content">
+            <a href="" class="popup_close close-popup">X</a>
+            <div class="popup_title">Change photo</div>
+            <div class="popup_text">
+                <input id="imagesss" type="text" name="search"  class="search" placeholder="Search here!">
+                <input type="submit" name="submit" class="btn btn-dark" value="Search" onclick="image()">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="sounds.js"></script>
+<div class="bottom">
+
+    <p style="font-size: 20px; color: #616cb8">Author name </p>
+
+</div>
+
+</body>
+</html>
