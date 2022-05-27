@@ -1,19 +1,8 @@
-var mongoose = require('mongoose');
-var schema = new mongoose.Schema({
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    username:{
-      type:String,
-      default:''
-    },
-    password: {
-        type: String,
-        default: ''
-    },
-
+const mongoose = require("mongoose");
+const encrypt = require("mongoose-encryption");
+let userSchema = new mongoose.Schema({
+    email: String,
+    password: String
 });
-var user = new mongoose.model('User', schema);
-module.exports = user;
+let userModel = new mongoose.model("User", userSchema);
+module.exports = userModel;
