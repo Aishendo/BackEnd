@@ -2,27 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Music</title>
+    <style>
+        html{
+            background: url("https://www.amazona.de/wp-content/uploads/2027/01/all-the-music-damien-riehl-aufmacher.jpeg"), #c2c2ff;
+            background-blend-mode: overlay;
+        }
+        .choose {
+            margin-top: 100px;
+            margin-left: 70px;
+            width: 400px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            border-radius: 40px;
+            background: white;
+            text-align: center;
+            font-family: "Baskerville Old Face";
+            font-size: x-large;
+        }
+        .fan{
+            display: block;
+            margin-top: 40px;
+            margin-left: 530px;
+            width: 150px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 10px;
+            background: white;
+            text-align: center;
+        }
+        .me{
+            border-radius: 8px;
+            width: 180px;
+            height: 50px;
+            margin-left: 530px;
+            background-color: red;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 <form action="/music" method="post">
     <br>
+    <div class="choose">
     <span>Choose the genre </span>
+    </div>
+    <div class="fan" >
     <input type="radio" id="contactChoice5"
            name="currency" value="Pop">
     <label for="contactChoice5">Pop</label>
-
+    </div>
+        <div class="fan" >
     <input type="radio" id="contactChoice6"
            name="currency" value="Jazz">
     <label for="contactChoice6">Jazz</label>
-
+        </div>
+            <div class="fan" >
     <input type="radio" id="contactChoice7"
            name="currency" value="Rock">
     <label for="contactChoice7">Rock</label>
+            </div>
+                <div class="fan" >
     <input type="radio" id="contactChoice8"
            name="currency" value="Indie">
     <label for="contactChoice8">Indie</label>
-    <button name="btn">press me</button>
+                </div>
+    <br>
+    <br>
+    <br>
+    <button class="me" name="btn">press me</button>
 </form>
 </body>
 </html>
