@@ -1,3 +1,4 @@
 module.exports = {
-    url: 'mongodb://localhost:27017/crud-node-express'
+    url: 'mongodb+srv://user:aisha@cluster0.ppulr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+    
 }
