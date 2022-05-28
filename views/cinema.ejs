@@ -1,0 +1,35 @@
+<%- include('partials/headerCinema') %>
+<form action="/cinema" method="post">
+    <div class="choose">
+        <span>Choose the genre</span>
+    </div>
+    <div class="fan" >
+        <input type="radio" id="contactChoice1"
+               name="crypto" value="Fantasy">
+        <label for="contactChoice1">Fantasy</label>
+    </div>
+    <br>
+    <div class="fan" >
+        <input type="radio" id="contactChoice2"
+               name="crypto" value="Action" class="act">
+        <label for="contactChoice2">Action</label>
+    </div>
+    <br>
+    <div class="fan" >
+        <input type="radio" id="contactChoice3"
+               name="crypto" value="Drama" class="dr">
+        <label for="contactChoice3">Drama</label>
+    </div>
+    <br>
+    <div class="fan" >
+        <input type="radio" id="contactChoice4"
+               name="crypto" value="Comedy" class="com">
+        <label for="contactChoice3">Comedy</label>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="me" name="btn">press me</button>
+</form>
+<%- include('partials/footer') %>
