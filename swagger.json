@@ -1,0 +1,154 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "web-main",
+    "description": "My User Project Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/user/register": {
+      "post": {
+        "tags": ["Users registration"],
+        "summary": "Registration for users",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": ["Users"],
+        "description": "Login as User",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+    "/movie/show": {
+      "get": {
+        "tags": ["Movie"],
+        "description": "Show all movies",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
+          }
+        }
+      }
+    },
+    "/game/show": {
+      "get": {
+        "tags": ["Game"],
+        "description": "Show all games",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Game"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Game": {
+      "required": ["game_name", "_id"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "game_name": {
+          "type": "string"
+        },
+        "game_image": {
+          "type": "string"
+        }
+      }
+    },
+    "Games": {
+      "type": "array",
+      "$ref": "#/definitions/Game"
+    },
+    "User": {
+      "required": ["username", "_id"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    },
+    "Movies": {
+      "required": ["movie_name","_id"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "movie_name": {
+          "type": "string"
+        },
+        "movie_rate": {
+          "type": "string"
+        }
+      }
+    },
+    "Movie": {
+      "type": "array",
+      "$ref": "#/definitions/Movies"
+    }
+  }
+
+}
